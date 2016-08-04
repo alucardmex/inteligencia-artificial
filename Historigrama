@@ -1,0 +1,16 @@
+%pylab inline
+
+import matplotlib.pylab
+import csv,operator
+archivo=open("dataset.csv","r")
+
+entrada= csv.reader(archivo)
+reg=next(entrada)
+print(reg)
+Inmueble = next(entrada) 
+
+print(Inmueble)
+
+
+archivo.close()
+....
