@@ -1,0 +1,33 @@
+'''arreglo = [[6,5,4,3,2],[2,1,4,5,6],[1,3,2,5,4],[4,5,6,2,1],[5,6,1,3,4]]'''
+
+arreglo = [[4,2,1,5],
+           [3,1,2,5],
+           [4,5,7,2],
+           [5,1,3,2]] 
+
+suma=0
+movimientos=[]
+a=0
+cont= len(arreglo)-1
+
+def avanzar(estado):
+    global cont,a,cont,suma
+    suma = suma + estado[0][0]
+    contador2= 0
+    
+    for i in range(cont,-1,-1):
+        for j in range(0,cont):
+            
+            if (j < cont and i > a):
+                if (estado [i-1][j-1] > estado [i][j+1]):
+                    suma = suma + arreglo[i-1][j]
+                    movimientos.append(suma)
+                    print estado[i-1][j]
+                    j = cont+1
+                    
+avanzar(arreglo)
+
+print str(movimientos)
+print str(suma)
+
+                    
